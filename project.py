@@ -1,11 +1,12 @@
 import json
+import sys
 
 def save(file,data):
     with open(file, 'w') as f:
         json.dump(data, f, indent=4)
 
 
-json_file = 'example_orders.json'
+json_file = sys.argv[1]
 with open(json_file,'r') as f:
     d = json.load(f)
 
