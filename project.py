@@ -8,16 +8,16 @@ def save(file,data):
 
 json_file = sys.argv[1]
 with open(json_file,'r') as f:
-    d = json.load(f)
+    data = json.load(f)
 
 customer = {}
 
-for i in d:
+for i in data:
     customer[i['phone']] = i['name']
 
 items = {}
 
-for j in d:
+for j in data:
     for i in j['items']:
         if i['name'] not in items:
             items[i['name']] = {'price':i['price'],'orders':0}
